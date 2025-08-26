@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { products } from '@/data/productos'
+import Link from 'next/link'
 import { useCart } from '@/context/CartContext'
 import { Minus, Plus, ChevronUp, ChevronDown } from 'lucide-react'
 
@@ -244,9 +245,12 @@ export default function ProductPage() {
             >
               Agregar al carrito
             </button>
-            <button className="border border-pink-600 text-pink-600 px-8 py-3 rounded-lg hover:bg-pink-50 transition text-base font-medium">
-              Comprar ahora
-            </button>
+           <Link href="https://www.facebook.com/profile.php?id=61579589049937" 
+  target="_blank" 
+  className="border border-pink-600 text-pink-600 px-8 py-3 rounded-lg hover:bg-pink-50 transition text-base font-medium inline-block text-center"
+>
+  Pregunta por disponibilidad y costo de envío en nuestra página de Facebook Solieth Clothes
+</Link>
           </div>
         </div>
       </div>
