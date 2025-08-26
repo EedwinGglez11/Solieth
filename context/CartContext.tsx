@@ -15,7 +15,7 @@ type CartContextType = {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (index: number) => void;
-  changeQuantity: (index: number, delta: number) => void;
+  updateQuantity: (index: number, change: number) => void;
   total: number;
   clearCart: () => void;
 };
@@ -31,48 +31,86 @@ export const useCart = () => {
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  // Cargar carrito desde localStorage
   useEffect(() => {
     const stored = localStorage.getItem('cart');
-    if (stored) setCartItems(JSON.parse(stored));
+    if (stored) {
+      try {
+        setCartItems(JSON.parse(stored));
+      } catch (e) {
+        console.error('Error parsing cart from localStorage', e);
+      }
+    }
   }, []);
 
+  // Guardar en localStorage cada vez que cambie el carrito
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    try {
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+    } catch (e) {
+      console.error('Error saving cart to localStorage', e);
+    }
   }, [cartItems]);
 
+  // Agregar producto al carrito
   const addToCart = (item: CartItem) => {
-    const index = cartItems.findIndex(
-      (p) => p.id === item.id && p.color === item.color
-    );
-    const updated = [...cartItems];
-    if (index >= 0) {
-      updated[index].quantity += item.quantity;
-    } else {
-      updated.push(item);
-    }
-    setCartItems(updated);
+    setCartItems((prev) => {
+      const existingIndex = prev.findIndex(
+        (p) => p.id === item.id && p.color === item.color
+      );
+
+      if (existingIndex >= 0) {
+        const updated = [...prev];
+        updated[existingIndex].quantity += item.quantity;
+        return updated;
+      }
+
+      return [...prev, item];
+    });
   };
 
+  // Eliminar producto por índice
   const removeFromCart = (index: number) => {
-    setCartItems(cartItems.filter((_, i) => i !== index));
+    if (index < 0 || index >= cartItems.length) return;
+    setCartItems((prev) => prev.filter((_, i) => i !== index));
   };
 
+  // Actualizar cantidad (sumar o restar)
+  const updateQuantity = (index: number, change: number) => {
+    if (index < 0 || index >= cartItems.length) return;
+
+    setCartItems((prev) => {
+      const newCart = [...prev];
+      const item = newCart[index];
+      const newQuantity = item.quantity + change;
+
+      if (newQuantity < 1) {
+        return newCart.filter((_, i) => i !== index); // Eliminar si es 0
+      }
+
+      item.quantity = newQuantity;
+      return newCart;
+    });
+  };
+
+  // Vaciar carrito
   const clearCart = () => {
-  setCartItems([]);
-};
-
-
-  const changeQuantity = (index: number, delta: number) => {
-    const updated = [...cartItems];
-    updated[index].quantity = Math.max(1, updated[index].quantity + delta);
-    setCartItems(updated);
+    setCartItems([]);
   };
 
+  // Calcular total
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, changeQuantity, total,clearCart }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        total,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
