@@ -18,12 +18,7 @@ export interface CartItem {
 
 const NavbarWithCart: React.FC = () => {
 
-   const {
-    cartItems,
-    changeQuantity,
-    removeFromCart,
-    clearCart,
-  } = useCart();
+   const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
 
   const totalItems = cartItems.reduce((sum, i) => sum + i.quantity, 0);
   const totalPrice = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -97,14 +92,14 @@ const NavbarWithCart: React.FC = () => {
                       <p className="text-sm">${item.price} MXN</p>
                       <div className="flex items-center mt-1">
                         <button
-                          onClick={() => changeQuantity(index, -1)}
+                          onClick={() => updateQuantity(index, -1)}
                           className="px-2 py-1 bg-gray-200 text-xs"
                         >
                           -
                         </button>
                         <span className="px-3">{item.quantity}</span>
                         <button
-                          onClick={() => changeQuantity(index, 1)}
+                          onClick={() => updateQuantity(index, 1)}
                           className="px-2 py-1 bg-gray-200 text-xs"
                         >
                           +
