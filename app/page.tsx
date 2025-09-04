@@ -21,9 +21,9 @@ import Link from "next/link";
 const products = [
   {
     id: 1,
-    name: "Vestido largo elegante",
-    price: 289.99,
-    image: "/ropa/vestidocereza.jpg",
+    name: "Short corto",
+    price: 119.99,
+    image: "/ropa/shortnegro.jpg",
   },
   {
     id: 2,
@@ -39,9 +39,9 @@ const products = [
   },
   {
     id: 4,
-    name: "Vestido casual",
+    name: "Vestido verde matcha",
     price: 229.99,
-    image: "/ropa/vestidorosa.jpg",
+    image: "/ropa/vestidoverde.jpg",
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ const products = [
   {
     id: 7,
     name: "Vestido estampado",
-    price: 159.99,
+    price: 139.99,
     image: "/ropa/vestidoflores.jpg",
   },
   {
@@ -99,15 +99,27 @@ const products = [
   },
   {
     id: 14,
-    name: "Trio tops",
-    price: 209.99,
-    image: "/ropa/tops.jpg",
+    name: "Vestido mini",
+    price: 139.99,
+    image: "/ropa/vestidoazulflores.jpg",
   },
   {
     id: 15,
-    name: "Vestido de verano",
-    price: 179.99,
-    image: "/ropa/vestidolargo.jpg",
+    name: "Vestido sin espalda",
+    price: 229.99,
+    image: "/ropa/vestidonegrocorto.jpg",
+  },
+  {
+    id: 16,
+    name: "Vestido largo elegante",
+    price: 289.99,
+    image: "/ropa/vestidocereza.jpg",
+  },
+  {
+    id: 17,
+    name: "Vestido elegante",
+    price: 199.99,
+    image: "/ropa/vestidonegrotrans.jpg",
   },
 ];
 

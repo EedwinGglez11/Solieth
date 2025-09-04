@@ -1,16 +1,16 @@
 export const products = [
   {
     id: 1,
-    name: 'Vestido largo elegante',
-    price: 289.99,
-    description: 'Vestido largo mediano blanco con estampado de cereza, talla M, con abertura en la pierna izquierda. ',
-    images: ['/ropa/vestidocereza.jpg'],
+    name: 'Short corto',
+    price: 119.99,
+    description: 'Short de cintura alta elástico y mate en color solido, talla XL.',
+    images: ['/ropa/shortnegro.jpg'],
     colors: [
       {
-        name: 'Blanco',
-        image: '/ropa/vestidocereza.jpg',
-        nameOverride: 'Vestido con estampado de cereza',
-        description: 'Vestido largo mediano blanco con estampado de cereza, talla M, con abertura en la pierna izquierda.',
+        name: 'Negro',
+        image: '/ropa/shortnegro.jpg',
+        nameOverride: 'Short corto',
+        description: 'Short de cintura alta elástico y mate en color solido.',
       },
     ],
   },
@@ -45,16 +45,16 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Vestido casual',
+    name: 'Vestido verde matcha',
     price: 229.99,
-    description: 'Vestido casual para fiestas, con escote, color rosa, talla M.',
-    images: ['/ropa/vestidorosa.jpg'],
+    description: 'Vestido de una sola manga con detalle de abertura en pierna, talla L.',
+    images: ['/ropa/vestidoverde.jpg'],
     colors: [
       {
-        name: 'Rosa',
-        image: '/ropa/vestidorosa.jpg',
-        nameOverride: 'Vestido casual',
-        description: 'Vestido casual para fiestas, con escote, color rosa, talla M.',
+        name: 'Verde Matcha',
+        image: '/ropa/vestidoverde.jpg',
+        nameOverride: 'Vestido verde matcha',
+        description: 'Vestido de una sola manga con detalle de abertura en pierna, talla L.',
       }    ],
   },
   {
@@ -96,7 +96,7 @@ export const products = [
   {
     id: 7,
     name: 'Vestido estampado',
-    price: 159.99,
+    price: 139.99,
     description: 'Vestido con estampado floral, mini,casual, talla M.',
     images: ['/ropa/vestidoflores.jpg'],
     colors: [
@@ -200,32 +200,65 @@ export const products = [
   },
   {
     id: 14,
-    name: 'Trio tops',
-    price: 209.99,
-    description: 'Set de tres tops de verano asimétrico sin espalda, tallas M.',
-    images: ['/ropa/tops.jpg'],
+    name: 'Vestido mini',
+    price: 139.99,
+    description: 'Vestido sin tirantes azul con estampado floral, talla M.',
+    images: ['/ropa/vestidoazulflores.jpg'],
     colors: [
       {
-        name: 'blanco, azul y blanco c/azul',
-        image: '/ropa/tops.jpg',
-        nameOverride: 'Trio tops',
-        description: 'Set de tres tops de verano asimétrico sin espalda, tallas M.',
+        name: 'Azul',
+        image: '/ropa/vestidoazulflores.jpg',
+        nameOverride: 'Vestido mini',
+        description: 'Vestido sin tirantes azul con estampado floral, talla M.',
       },
         ],
   },
   {
     id: 15,
-    name: 'Vestido de verano',
-    price: 179.99,
-    description: 'Vestido de verano ajustado sin tirantes con estampado floral rosa y costuras exteriores, talla M.',
-    images: ['/ropa/vestidolargo.jpg'],
+    name: 'Vestido sin espalda',
+    price: 229.99,
+    description: 'Vestido elegante sin espalda y cuello halter, talla L.',
+    images: ['/ropa/vestidonegrocorto.jpg'],
     colors: [
       {
-        name: 'blanco perla',
-        image: '/ropa/vestidolargo.jpg',
-        nameOverride: 'Vestido de verano',
-        description: 'Vestido de verano ajustado sin tirantes con estampado floral rosa y costuras exteriores, talla M.',
+        name: 'Negro',
+        image: '/ropa/vestidonegrocorto.jpg',
+        nameOverride: 'Vestido sin espalda',
+        description:  'Vestido elegante sin espalda y cuello halter, talla L.',
       },
+      
+        ],
+  },
+  {
+    id: 16,
+    name: 'Vestido largo elegante',
+    price: 289.99,
+    description: 'Vestido largo mediano blanco con estampado de cereza, talla M, con abertura en la pierna izquierda.',
+    images: ['/ropa/vestidocereza.jpg'],
+    colors: [
+      {
+        name: 'Blanco',
+        image: '/ropa/vestidocereza.jpg',
+        nameOverride: 'Vestido largo elegante',
+        description:  'Vestido largo mediano blanco con estampado de cereza, talla M, con abertura en la pierna izquierda.',
+      },
+      
+        ],
+  },
+    {
+    id: 17,
+    name: 'Vestido elegante',
+    price: 199.99,
+    description: 'Vestido elegante con hombro caído y doblado asimétrico con malla negra, talla XXL.',
+    images: ['/ropa/vestidonegrotrans.jpg'],
+    colors: [
+      {
+        name: 'Negro',
+        image: '/ropa/vestidonegrotrans.jpg',
+        nameOverride: 'Vestido elegante',
+        description:  'Vestido elegante con hombro caído y doblado asimétrico con malla negra, talla XXL.',
+      }
+      
         ],
   },
 ];
