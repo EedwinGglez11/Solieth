@@ -255,33 +255,35 @@ export default function ProductPage() {
         </div>
       </div>
 
-      {/* Recomendaciones */}
-      {relatedProducts.length > 0 && (
-        <section className="mt-16">
-          <h2 className="text-2xl font-medium mb-6 text-center">Quizás también te guste</h2>
-          <div className="flex gap-6 overflow-x-auto pb-4 px-2 scrollbar-hide">
-            {relatedProducts.map((p) => (
-              <div
-                key={p.id}
-                className="flex-none w-48 md:w-64 bg-white rounded-lg shadow hover:shadow-lg transition"
-              >
-                <div className="relative w-full h-60 md:h-72">
-                  <Image
-                    src={p.images[0]}
-                    alt={p.name}
-                    fill
-                    className="object-contain p-2"
-                  />
-                </div>
-                <div className="p-3 text-center">
-                  <h3 className="text-sm font-light text-gray-700 truncate">{p.name}</h3>
-                  <p className="text-pink-600 font-semibold mt-1">${p.price.toFixed(2)} MXN</p>
-                </div>
-              </div>
-            ))}
+    {/* Recomendaciones */}
+{relatedProducts.length > 0 && (
+  <section className="mt-16">
+    <h2 className="text-2xl font-medium mb-6 text-center">Quizás también te guste</h2>
+    <div className="flex gap-6 overflow-x-auto pb-4 px-2 scrollbar-hide">
+      {relatedProducts.map((p) => (
+        <Link 
+          key={p.id} 
+          href={`/producto/${p.id}`}
+          className="flex-none w-48 md:w-64 bg-white rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+        >
+          <div className="relative w-full h-60 md:h-72">
+            <Image
+              src={p.images[0]}
+              alt={p.name}
+              fill
+              className="object-contain p-2"
+              sizes="(max-width: 768px) 50vw, 20vw"
+            />
           </div>
-        </section>
-      )}
+          <div className="p-3 text-center">
+            <h3 className="text-sm font-light text-gray-700 truncate">{p.name}</h3>
+            <p className="text-pink-600 font-semibold mt-1">${p.price.toFixed(2)} MXN</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </section>
+)}
     </div>
   )
 }
