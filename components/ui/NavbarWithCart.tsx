@@ -63,8 +63,6 @@ const NavbarWithCart: React.FC = () => {
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md px-4 py-2 flex flex-col gap-2 md:hidden">
           <Link href="/">Inicio</Link>
-          <Link href="/coleccion">Colección</Link>
-          <Link href="/contacto">Contacto</Link>
         </div>
       )}
 
