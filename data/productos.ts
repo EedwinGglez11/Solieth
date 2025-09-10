@@ -261,4 +261,20 @@ export const products = [
       
         ],
   },
+  {
+    id: 18,
+    name: 'Pantalón negro',
+    price: 229.99,
+    description: 'Pantalón negro de tiro alto con pinzas a los lados, talla 9.',
+    images: ['/ropa/pantalonnegro.jpg'],
+    colors: [
+      {
+        name: 'Negro',
+        image: '/ropa/pantalonnegro.jpg',
+        nameOverride: 'Pantalón negro',
+        description:  'Pantalón negro de tiro alto con pinzas a los lados, talla 9.',
+      }
+      
+        ],
+  },
 ];

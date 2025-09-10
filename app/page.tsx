@@ -121,6 +121,12 @@ const products = [
     price: 199.99,
     image: "/ropa/vestidonegrotrans.jpg",
   },
+  {
+    id: 18,
+    name: "Pantalón negro",
+    price: 229.99,
+    image: "/ropa/pantalonnegro.jpg",
+  },
 ];
 
 export default function HomePage() {
